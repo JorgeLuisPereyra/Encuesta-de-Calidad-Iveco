@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encuesta de Análisis Cero KM e 6 Meses</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #eef2f5;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #003b5c;
+            margin-bottom: 30px;
+        }
+        h2 {
+            border-bottom: 2px solid #003b5c;
+            padding-bottom: 8px;
+            color: #003b5c;
+            margin-top: 30px;
+            margin-bottom: 20px;
+            font-size: 1.4em;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 6px;
+            font-size: 0.9em;
+            color: #444;
+        }
+        input[type="text"], input[type="number"], select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccd1d9;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 1em;
+            background-color: #fbfbfc;
+            transition: border-color 0.2s;
+        }
+        input[type="text"]:focus, input[type="number"]:focus {
+            border-color: #003b5c;
+            outline: none;
+            background-color: #fff;
+        }
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .grid-3 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+        }
+        .gama-section {
+            background: #f8f9fa;
+            border: 1px solid #e1e5eb;
+            padding: 20px;
+            border-radius: 6px;
+            margin-bottom: 25px;
+        }
+        .gama-title {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #0056b3;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+        .btn-submit {
+            background-color: #003b5c;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            display: block;
+            width: 100%;
+            margin-top: 30px;
+            transition: background-color 0.2s;
+        }
+        .btn-submit:hover {
+            background-color: #00263f;
+        }
+        
+        @media (max-width: 768px) {
+            .grid-2, .grid-3 {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Análisis Cero KM e 6 Meses</h1>
+        <form action="#" method="POST">
+            <h2>Datos Generales</h2>
+            <div class="grid-3">
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" name="nombre" value="Jorge Luis Pereyra Acosta">
+                </div>
+                <div class="form-group">
+                    <label for="dealer">Dealer</label>
+                    <input type="text" id="dealer" name="dealer" placeholder="Ingresar dealer">
+                </div>
+                <div class="form-group">
+                    <label for="regional">Regional</label>
+                    <input type="text" id="regional" name="regional" placeholder="Ingresar regional">
+                </div>
+                <div class="form-group">
+                    <label for="cliente">Cliente</label>
+                    <input type="text" id="cliente" name="cliente" placeholder="Ingresar cliente">
+                </div>
+                <div class="form-group">
+                    <label for="empresa">Empresa</label>
+                    <input type="text" id="empresa" name="empresa" value="IVECO / IVECAM">
+                </div>
+                <div class="form-group">
+                    <label for="funcion">Función</label>
+                    <input type="text" id="funcion" name="funcion" value="Zone Manager (SZM)">
+                </div>
+            </div>
+
+            <h2>Análisis por Gama</h2>
+
+            <div class="gama-section">
+                <div class="gama-title">Gama: Daily</div>
+                
+                <div class="grid-2">
+                    <div class="form-group">
+                        <label>Respecto a la competencia (¿Cuál es nuestra posición?)</label>
+                        <input type="text" name="posicion_daily" placeholder="Ej: Líder, Top 3, etc.">
+                    </div>
+                    <div class="form-group">
+                        <label>¿Quién está adelante?</label>
+                        <input type="text" name="adelante_daily" placeholder="Competidor principal">
+                    </div>
+                </div>
+
+                <div class="grid-3">
+                    <div class="form-group">
+                        <label>Nota para CERO KM (0 a 10)</label>
+                        <input type="number" min="0" max="10" name="nota_cero_daily" placeholder="0-10">
+                    </div>
+                    <div class="form-group">
+                        <label>Principales problemas CERO KM</label>
+                        <input type="text" name="prob_cero_daily" placeholder="Describir problemas">
+                    </div>
+                    <div class="form-group">
+                        <label>Defecto / Problema CERO</label>
+                        <input type="text" name="defecto_cero_daily" placeholder="Detallar defecto">
+                    </div>
+                </div>
+
+                <div class="grid-3">
+                    <div class="form-group">
+                        <label>Nota para 6 meses de uso (0 a 10)</label>
+                        <input type="number" min="0" max="10" name="nota_6m_daily" placeholder="0-10">
+                    </div>
+                    <div class="form-group">
+                        <label>Principales problemas técnicos (6 meses)</label>
+                        <input type="text" name="prob_6m_daily" placeholder="Describir problemas">
+                    </div>
+                    <div class="form-group">
+                        <label>Defecto / Problema 6 meses</label>
+                        <input type="text" name="defecto_6m_daily" placeholder="Detallar defecto">
+                    </div>
+                </div>
+            </div>
+    
+            <div class="gama-section">
+                <div class="gama-title">Gama: Tector</div>
+                
+                <div class="grid-2">
+                    <div class="form-group">
+                        <label>Respecto a la competencia (¿Cuál es nuestra posición?)</label>
+                        <input type="text" name="posicion_tector" placeholder="Ej: Líder, Top 3, etc.">
+                    </div>
+                    <div class="form-group">
+                        <label>¿Quién está adelante?</label>
+                        <input type="text" name="adelante_tector" placeholder="Competidor principal">
+                    </div>
+                </div>
+
+                <div class="grid-3">
+                    <div class="form-group">
+                        <label>Nota para CERO KM (0 a 10)</label>
+                        <input type="number" min="0" max="10" name="nota_cero_tector" placeholder="0-10">
+                    </div>
+                    <div class="form-group">
+                        <label>Principales problemas CERO KM</label>
+                        <input type="text" name="prob_cero_tector" placeholder="Describir problemas">
+                    </div>
+                    <div class="form-group">
+                        <label>Defecto / Problema CERO</label>
+                        <input type="text" name="defecto_cero_tector" placeholder="Detallar defecto">
+                    </div>
+                </div>
+
+                <div class="grid-3">
+                    <div class="form-group">
+                        <label>Nota para 6 meses de uso (0 a 10)</label>
+                        <input type="number" min="0" max="10" name="nota_6m_tector" placeholder="0-10">
+                    </div>
+                    <div class="form-group">
+                        <label>Principales problemas técnicos (6 meses)</label>
+                        <input type="text" name="prob_6m_tector" placeholder="Describir problemas">
+                    </div>
+                    <div class="form-group">
+                        <label>Defecto / Problema 6 meses</label>
+                        <input type="text" name="defecto_6m_tector" placeholder="Detallar defecto">
+                    </div>
+                </div>
+            </div>
+    
+            <div class="gama-section">
+                <div class="gama-title">Gama: SWAY</div>
+                
+                <div class="grid-2">
+                    <div class="form-group">
+                        <label>Respecto a la competencia (¿Cuál es nuestra posición?)</label>
+                        <input type="text" name="posicion_sway" placeholder="Ej: Líder, Top 3, etc.">
+                    </div>
+                    <div class="form-group">
+                        <label>¿Quién está adelante?</label>
+                        <input type="text" name="adelante_sway" placeholder="Competidor principal">
+                    </div>
+                </div>
+
+                <div class="grid-3">
+                    <div class="form-group">
+                        <label>Nota para CERO KM (0 a 10)</label>
+                        <input type="number" min="0" max="10" name="nota_cero_sway" placeholder="0-10">
+                    </div>
+                    <div class="form-group">
+                        <label>Principales problemas CERO KM</label>
+                        <input type="text" name="prob_cero_sway" placeholder="Describir problemas">
+                    </div>
+                    <div class="form-group">
+                        <label>Defecto / Problema CERO</label>
+                        <input type="text" name="defecto_cero_sway" placeholder="Detallar defecto">
+                    </div>
+                </div>
+
+                <div class="grid-3">
+                    <div class="form-group">
+                        <label>Nota para 6 meses de uso (0 a 10)</label>
+                        <input type="number" min="0" max="10" name="nota_6m_sway" placeholder="0-10">
+                    </div>
+                    <div class="form-group">
+                        <label>Principales problemas técnicos (6 meses)</label>
+                        <input type="text" name="prob_6m_sway" placeholder="Describir problemas">
+                    </div>
+                    <div class="form-group">
+                        <label>Defecto / Problema 6 meses</label>
+                        <input type="text" name="defecto_6m_sway" placeholder="Detallar defecto">
+                    </div>
+                </div>
+            </div>
+    
+            <button type="button" class="btn-submit" onclick="window.print()">Guardar como PDF / Imprimir</button>
+        </form>
+    </div>
+</body>
+</html>
