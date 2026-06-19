@@ -58,6 +58,11 @@
             outline: none;
             background-color: #fff;
         }
+        /* Para asegurar que el texto de fondo se vea bien gris */
+        ::placeholder {
+            color: #888;
+            opacity: 1;
+        }
         .grid-2 {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -115,7 +120,7 @@
             <div class="grid-3">
                 <div class="form-group">
                     <label for="nombre">Nombre</label>
-                    <input type="text" id="nombre" name="nombre" placeholder="Ingresar nombre">
+                    <input type="text" id="nombre" name="nombre" placeholder="ingresar nombre">
                 </div>
                 <div class="form-group">
                     <label for="dealer">Dealer</label>
@@ -146,7 +151,7 @@
                 </div>
                 <div class="form-group">
                     <label for="empresa">Empresa</label>
-                    <input type="text" id="empresa" name="empresa" value="IVECO / IVECAM">
+                    <input type="text" id="empresa" name="empresa" placeholder="Ingresar empresa">
                 </div>
             </div>
 
