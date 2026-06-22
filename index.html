@@ -19,11 +19,26 @@
             padding: 30px;
             border-radius: 8px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            position: relative;
         }
-        h1 {
+        /* Contenedor del encabezado y logo */
+        .header-container {
+            position: relative;
+            margin-bottom: 30px;
+            min-height: 50px;
+        }
+        .header-container h1 {
             text-align: center;
             color: #003b5c;
-            margin-bottom: 30px;
+            margin: 0;
+            padding-top: 10px;
+        }
+        .logo-iveco {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 140px; /* Tamaño del logo */
+            height: auto;
         }
         h2 {
             border-bottom: 2px solid #003b5c;
@@ -105,16 +120,29 @@
             background-color: #00263f;
         }
         
+        /* Ajuste responsivo para celulares */
         @media (max-width: 768px) {
             .grid-2, .grid-3 {
                 grid-template-columns: 1fr;
+            }
+            .logo-iveco {
+                position: relative;
+                display: block;
+                margin: 0 auto 15px auto;
+                right: auto;
+                width: 120px;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Análisis 0km y 6 Meses</h1>
+        
+        <div class="header-container">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/1/12/Iveco_logo.svg" alt="Logo Iveco" class="logo-iveco">
+            <h1>Análisis 0km y 6 Meses</h1>
+        </div>
+
         <form action="https://api.sheetmonkey.io/form/vNYbzfT2eg225J65QEMBZR" method="POST">
             
             <h2>Datos Generales</h2>
@@ -237,7 +265,7 @@
             </div>
     
             <div class="gama-section">
-                <div class="gama-title">Gama: SWAY</div>
+                <div class="gama-title">Gama: HIWAY/SWAY</div>
                 
                 <div class="grid-2">
                     <div class="form-group">
